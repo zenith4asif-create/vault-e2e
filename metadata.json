@@ -1,0 +1,6 @@
+{
+  "name": "Vault - Liquid Encrypted Data Vault",
+  "description": "Personal end-to-end encrypted data vault with transparent colorless liquid glassmorphic UI, PBKDF2-HMAC-SHA256, and AES-256-GCM encryption.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

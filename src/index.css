@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #050608;
+    color: #e6edf5;
+    overflow-x: hidden;
+  }
+}
+
+/* Colorless Liquid Glass Design System */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.liquid-glass-elevated {
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(32px) saturate(160%);
+  -webkit-backdrop-filter: blur(32px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 24px 60px -20px rgba(0, 0, 0, 0.8),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.liquid-glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #f1f5f9;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.liquid-glass-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 0 0 3px rgba(255, 255, 255, 0.08),
+    inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Colorless Liquid Specular Button */
+.liquid-btn-primary {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.07) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.liquid-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.liquid-btn-primary:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 14px 30px -5px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+.liquid-btn-primary:hover::before {
+  left: 100%;
+}
+
+.liquid-btn-primary:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+.liquid-btn-ghost {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.liquid-btn-ghost:active {
+  transform: translateY(0);
+}
+
+.liquid-btn-danger {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-btn-danger:hover {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar for Liquid UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Smooth keyframes */
+@keyframes liquidPulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.08) translateY(-12px);
+    opacity: 0.45;
+  }
+}
+
+.animate-liquid-float {
+  animation: liquidPulse 12s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.scanline-effect {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
